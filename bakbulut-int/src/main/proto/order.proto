@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.berdanakbulut.bakbulut.order;
+
+option java_multiple_files = true;
+option java_package = "com.berdanakbulut.bakbulut.order.lib";
+option java_outer_classname = "OrderProto";
+
+service OrderService {
+  rpc PlaceOrder (OrderRequest) returns (OrderResponse) {
+  }
+}
+
+message OrderRequest {
+  string products = 1;
+  int32 customerId = 2;
+}
+
+message OrderResponse {
+  string id = 1;
+}
